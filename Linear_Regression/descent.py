@@ -1,7 +1,9 @@
 import re
 
+# problem: too easy to overflow when calculating J(w) and D(w,k)
+
 alpha = 0.1
-eps = 1e-10
+eps = 1e-10 # threshold
 M = 0
 K = 0
 datas = []
