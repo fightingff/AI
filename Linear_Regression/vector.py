@@ -89,14 +89,6 @@ with open("data.txt", 'r') as f:
     cnt = 0
     while correctness(W) < 0.9:
         lst = W.copy()
-        
-        # for debug
-        # print(lst)
-        # print(datas)
-        # print(lst @ datas.T)
-        # print ((lst @ datas.T @ Vs.T))
-        # input()
-        
         W -= alpha / M * (lst @ datas.T @ Vs.T)
         cnt += 1
         Jw.append(J(W))

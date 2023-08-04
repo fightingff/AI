@@ -5,5 +5,5 @@
 - **Prisoner**(AI player for simulating *Prisoners' Dilemma*)
 - **Linear Regression**(My own implementation of *Linear Regression* with *Gradient Descent*)
   - Simple implementation
-  - Vectorized implementation with feature scaling
+  - Vectorized implementation with feature scaling(z-score)
   - Dynamic chart for visualizing the process of  gradient descent

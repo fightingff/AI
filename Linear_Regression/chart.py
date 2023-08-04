@@ -17,7 +17,7 @@ class Draw:
             self.y.append(self.Jw[n]) 
         else:
             self.y.append(1e-5)
-        self.y_.append(self.cs[n]*1e-5)
+        self.y_.append(self.cs[n]*1e-5) #正确率
         plt.plot(self.x,self.y,self.y_, color='b')  # 绘制图形
 
     def Show(self,count):
