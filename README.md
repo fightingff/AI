@@ -13,3 +13,8 @@
   - Sigmod function to estimate
   - regularized
   - scattered pictures to visualize the process
+- **Network**
+
+  - Training Network using tensorflow to do digit recognization(simple)
+  - Recognize the newly created picture
+- **Cluster**
