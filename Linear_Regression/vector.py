@@ -63,7 +63,7 @@ with open("data.txt", 'r') as f:
 
     # use z-score standardzation
     datas = np.matrix(datas)
-    Standardzation()
+    # Standardzation()
     
     # split datas into train and test
     test_M = M//5 + 1

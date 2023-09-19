@@ -74,5 +74,8 @@ with open("data.txt", 'r') as f:
     
     # Ans
     print("W = ",W)
+    with open ("data.out","w") as fo:
+        fo.write(str(W[0])+" ")
+        fo.write(str(W[1]))
     
     

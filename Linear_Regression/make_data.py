@@ -5,7 +5,7 @@ P = 5
 
 with open("data.txt","w") as f:
     M = 1000
-    N = 20
+    N = 1
     f.write(str(M)+" "+str(N)+"\n")
     W = []
     B = R(-P,P)
