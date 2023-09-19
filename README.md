@@ -11,10 +11,18 @@
 - **Logistic Regression**
 
   - Sigmod function to estimate
-  - regularized
-  - scattered pictures to visualize the process
+  - Regularized
+  - Scattered pictures to visualize the process
 - **Network**
 
-  - Training Network using tensorflow to do digit recognization(simple)
+  - Training Network using tensorflow to do digit recognition(simple)
   - Recognize the newly created picture
 - **Cluster**
+
+  - Use K - means algorithm to do clustering (minimium $\sum ||xi-ci||$)
+    1. Randomly initialize K cluster centers
+    2. Repeat
+       1. Cluster assignment step: assign each data point to the closest cluster center
+       2. Move cluster center step: compute the mean of each cluster and assign the new mean as the cluster center
+    3. Check convergence
+  - Scattered pictures to notably visualize the process and the conclusion
