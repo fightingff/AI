@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # k-means clustering
 Kt = 100   # max iteration
-K = 3      # number of clusters
+K = 5      # number of clusters
 Eps = 1e-3 # threshold
 delay = 0.5 # delay time
 
