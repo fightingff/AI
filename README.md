@@ -14,7 +14,7 @@
   - Regularized
   - Scattered pictures to visualize the process
   - Ordinary Least Square
-    $W =\frac{\bar{x*y} - \bar x * \bar y}{\bar {x^2} - {\bar x^2} }$
+    $W =\frac{\bar{x*y} - \bar x* \bar y}{\bar {x^2} - {\bar x^2} }$
     $B = \bar Y - W * \bar{x}$
 - **Network**
 
