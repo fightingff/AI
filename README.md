@@ -29,3 +29,11 @@
        2. Move cluster center step: compute the mean of each cluster and assign the new mean as the cluster center
     3. Check convergence
   - Scattered pictures to notably visualize the process and the conclusion
+- **Detection**
+
+  - Construct **Normal Distribution** for each feature of the training set(all normal datas)
+    $\mu_i = \frac{1}{N} \Sigma x^{(k)}_i$
+    $\delta^2 = \frac{1}{N-1} \Sigma (x^{(k)}_i - \mu_i)^2$
+  - Check every test vector by calulating the **product** of the probability of each feature as the final probability, and then compare it with the **threshold** to decide whether it is an anomaly or not
+  - Maybe each feature is commonly not strictly independent, but the result is often still good enough
+  - When features are not Gaussian enough, we can use $log(x+K)$ or $x^k(0<k<1)$ to handle it
