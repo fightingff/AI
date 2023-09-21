@@ -37,3 +37,4 @@
   - Check every test vector by calulating the **product** of the probability of each feature as the final probability, and then compare it with the **threshold** to decide whether it is an anomaly or not
   - Maybe each feature is commonly not strictly independent, but the result is often still good enough
   - When features are not Gaussian enough, we can use $log(x+K)$ or $x^k(0<k<1)$ to handle it
+  - (3-D figures to show 2-D featured datas)
