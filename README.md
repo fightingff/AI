@@ -38,3 +38,9 @@
   - Maybe each feature is commonly not strictly independent, but the result is often still good enough
   - When features are not Gaussian enough, we can use $log(x+K)$ or $x^k(0<k<1)$ to handle it
   - (3-D figures to show 2-D featured datas)
+- **Recommend System**
+
+  - **Collaborative Filtering**. Use vector $W^{(i)}$ to denote User(i)'s preferance and $X^{(j)}$ to denote Movie(j)'s features, and then use $W^{(i)} * X^{(j)} + B^{(i,j)}$ to estimate the rating of User(i) to Movie(j) 
+  - Like *Linear Regression*, use **Gradient Descent** to optimize the cost function
+    $J(W,X,B) = \frac{1}{2} \Sigma_{marked(i,j)}(W^{(i)} * X^{(j)} +B^{(i,j)}- y^{(i,j)})^2 + \frac{\lambda}{2} \Sigma \Sigma (W^{(i,j)})^2 + \frac{\lambda}{2} \Sigma \Sigma (X^{(i,j)})^2$
+  - Maybe because people's mind is so complex that we can't fit it with a simple linear function, which results in a bad performance of the model(accuracy at about only 46%) 
