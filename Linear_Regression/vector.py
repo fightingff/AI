@@ -4,7 +4,7 @@ from chart import Draw
 
 # problem: too easy to overflow when calculating J(w) and D(w,k)
 
-alpha = 0.1 # learning rate
+alpha = 0.001 # learning rate
 eps = 1e-10 # threshold
 M = 0
 K = 0
@@ -87,7 +87,7 @@ with open("data.txt", 'r') as f:
     
     # gradient descent
     cnt = 0
-    while correctness(W) < 0.9:
+    while correctness(W) < 0.9 and cnt < 1e6:
         lst = W.copy()
         W -= alpha / M * (lst @ datas.T @ Vs.T)
         cnt += 1
@@ -98,8 +98,11 @@ with open("data.txt", 'r') as f:
     # Ans
     W = W.tolist()[0]
     print("W=",W[:K])
+    with open ("data.out","w") as fo:
+        fo.write(str(W[0])+" ")
+        fo.write(str(W[1]))
     
-    Jw.append(J(W))
-    Cs.append(correctness(W))
-    Painter = Draw(records=Jw,corrcetness=Cs)
-    Painter.Show(cnt)
+    # Jw.append(J(W))
+    # Cs.append(correctness(W))
+    # Painter = Draw(records=Jw,corrcetness=Cs)
+    # Painter.Show(cnt)

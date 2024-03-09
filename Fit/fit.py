@@ -70,10 +70,10 @@ class NeuralNetwork:
         if i < 0:
             return
         
-        D = - dX * np.sum(self.Layers[i].Xo * (1 - self.Layers[i].Xo),axis=1,keepdims=True)
+        D = dX * np.sum(self.Layers[i].Xo * (1 - self.Layers[i].Xo),axis=1,keepdims=True)
         dW = D * np.sum(self.Layers[i].Xi,axis=1,keepdims=True).T
         dB = D
-        dX = - self.Layers[i].W.T @ D
+        dX = self.Layers[i].W.T @ D
         
         self.Layers[i].W -= alpha * dW
         self.Layers[i].B -= alpha * dB
@@ -89,7 +89,7 @@ class NeuralNetwork:
         D = np.sum(Y_ - Y,axis=1,keepdims=True) 
         dW = D * np.sum(Output.Xi,axis=1,keepdims=True).T
         dB = D
-        dX = - D * Output.W.T
+        dX = D * Output.W.T
             
         Output.W -= alpha * dW
         Output.B -= alpha * dB
@@ -152,4 +152,4 @@ def Main(Epoch=1000,Sample=1,alpha=0.1,Maxh=10):
     Show(model,BestModel,X,Y)
     
 if __name__ == "__main__":
-    Main(Epoch=10000,Sample=1,alpha=0.1,Maxh=11)
+    Main(Epoch=2000,Sample=1,alpha=0.01,Maxh=12)

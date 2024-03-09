@@ -148,9 +148,9 @@ class Window(QWidget):
             
     def keyPressEvent(self, event):
         image = self.__paintBoard.GetContentAsQImage()
-        image.save("pictrue.png")
+        image.save("picture.png")
             
-        data = tf.keras.preprocessing.image.load_img("pictrue.png",target_size=(28,28))
+        data = tf.keras.preprocessing.image.load_img("picture.png",target_size=(28,28))
         data = data.convert('L')
         data = tf.keras.preprocessing.image.img_to_array(data)
         data = data.reshape(-1, 28, 28, 1)

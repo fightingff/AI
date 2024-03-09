@@ -49,6 +49,7 @@ with open("data.txt", 'r') as f:
     datas = []
     for i in range(M):
         item = [float(x) for x in numbers[2+i*(K+1):2+(i+1)*(K+1)]]
+        item[K]*=1000
         item.insert(0,1)    # stands for B to simplify the calculation
         datas.append(item)
 
@@ -65,7 +66,7 @@ with open("data.txt", 'r') as f:
     lst[0] = 1
     
     cnt = 0
-    while correctness(W) < 90:
+    while correctness(W) < 90 and cnt < 10000:
         lst = W.copy()
         for i in range(K+1):
             W[i] -= alpha * D(lst,i)    # gradient descent

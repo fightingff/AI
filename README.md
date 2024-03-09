@@ -2,13 +2,17 @@
 
 ***Keep Learning & gaining progress!***
 
-- **Prisoner**(AI player for simulating *Prisoners' Dilemma*)
-- **Linear Regression**(My own implementation of *Linear Regression* with *Gradient Descent*)
+## **Prisoner**
+    
+  - (AI player for simulating *Prisoners' Dilemma*)
+
+## **Linear Regression**(My own implementation of *Linear Regression* with *Gradient Descent*)
 
   - Simple implementation
   - Vectorized implementation with feature scaling(z-score)
   - Dynamic chart for visualizing the process of  gradient descent
-- **Logistic Regression**
+
+## **Logistic Regression**
 
   - Sigmod function to estimate
   - Regularized
@@ -16,11 +20,13 @@
   - Ordinary Least Square
     $W =\frac{\bar{x*y} - \bar x* \bar y}{\bar {x^2} - {\bar x^2} }$
     $B = \bar Y - W * \bar{x}$
-- **Network**
+
+## **Network**
 
   - Training Network using tensorflow to do digit recognition(simple)
   - Recognize the newly created picture
-- **Cluster**
+
+## **Cluster**
 
   - Use K - means algorithm to do clustering (minimium $\sum ||xi-ci||$)
     1. Randomly initialize K cluster centers
@@ -29,7 +35,8 @@
        2. Move cluster center step: compute the mean of each cluster and assign the new mean as the cluster center
     3. Check convergence
   - Scattered pictures to notably visualize the process and the conclusion
-- **Detection**
+
+## **Detection**
 
   - Construct **Normal Distribution** for each feature of the training set(all normal datas)
     $\mu_i = \frac{1}{N} \Sigma x^{(k)}_i$
@@ -38,7 +45,8 @@
   - Maybe each feature is commonly not strictly independent, but the result is often still good enough
   - When features are not Gaussian enough, we can use $log(x+K)$ or $x^k(0<k<1)$ to handle it
   - (3-D figures to show 2-D featured datas)
-- **Recommend System**
+
+## - **Recommend System**
 
   - **Collaborative Filtering**. Use vector $W^{(i)}$ to denote User(i)'s preferance and $X^{(j)}$ to denote Movie(j)'s features, and then use $W^{(i)} * X^{(j)} + B^{(i,j)}$ to estimate the rating of User(i) to Movie(j)
   - Like *Linear Regression*, use **Gradient Descent** to optimize the cost function
@@ -51,3 +59,11 @@
   - use **gradient descent**algorithm doing **back propagation** to optimize the cost function(though the vectorized implementation is not totally mastered)
   - By some experiments, we can find that the more layers and neurals the network has, and the more epoches the model has trained, the better the complex function it can fit. Of course, it is notable that the loss can keep fluctuating even if the model has been trained for a long time.
   - Generally speaking, a small learning rate can make the model converge more steadily, but it will take more time to train the model.
+
+## **Recognition**
+
+  - Handwritten networks long time ago, so it't naive and weak.
+
+## **cGAN**
+
+  - Learning conditional Generative Adversarial Networks.
