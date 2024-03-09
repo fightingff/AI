@@ -73,7 +73,7 @@
 
 - Maybe each feature is commonly not strictly independent, but the result is often still good enough
 
-- When features are not Gaussian enough, we can use $log(x+K)$ or $x^k(0<k<1)$ to handle it
+- When features are not Gaussian enough, we can use $log(x+K)$ or $x^k (0 < k < 1)$ to handle it
 
 - (3-D figures to show 2-D featured datas)
 
