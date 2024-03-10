@@ -114,6 +114,24 @@
 
 ## **cGAN**
 
-- Conditional Generative Adversarial Networks, actually is not very different from the normal GAN. It just uses a two-layer FC to do label embedding, and concatening the result to the input.
+- **cGAN with labels**
   
-- In my implementation, ignited by **transformer**, I just use addition instead of concatening to reduce the model size to fasten converging. 
+    - Conditional Generative Adversarial Networks, actually is not very different from the normal GAN. It just uses a two-layer FC to do label embedding, and concatening the result to the input.
+      
+    - In my implementation, ignited by **transformer**, I just use addition instead of concatening to reduce the model size to fasten converging. 
+
+- **Pix2Pix GAN**
+
+    - Instead of embedding of labels, it uses the input image as the condition to generate the output image.
+    
+    - Here, I employ some optimization as follows
+    
+        - Reduce batch size, which seems to be a good way to gain reliable results
+        
+        - Use smoothed loss to make the model converge more steadily, where I find the least square loss is a good choice compared with the cross-entropy and L1 loss
+        
+        - Replace the deterministic maxpooling with the convolutional layer with stride 2, which can make the model generate more details
+    
+    - However, the result is still not so good without a fine-tuned hyperparameters and a large computational resource. Anyway, at least I can recognize some architectural features of the building in the generated image, hhh.
+    
+    - Besides, I do a reversed task for fun. It shows that the model truly grabs some features of the input image like horizontal lines, but it's still not good enough to generate a clear and sharp image. What's more interesting,  the generator seems to find a tricky to cheat the discriminator by generating a image with scattered squares after some epoches, which is, f**k.    
