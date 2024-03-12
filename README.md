@@ -142,7 +142,7 @@
 
 - Here we construct a **cycle structure**, where X part to learn dataset X, Y part to learn dataset Y. And we construct two Generator Gxy and Gyx to do bidirectional transfer.
 
-    ![CycleGAN](./images/CycleGAN.png)
+    ![CycleGAN](imgs/CycleGAN.png)
 
 - In order to constrain the model with the input image, or say, prevent the model from generating irrelevant but true images, the paper introduces a **cycle loss**. The generated image will be recovered back and compared to the initial one, thus pushing the model to learn the input image.
 
