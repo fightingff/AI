@@ -146,6 +146,6 @@
 
 - In order to constrain the model with the input image, or say, prevent the model from generating irrelevant but true images, the paper introduces a **cycle loss**. The generated image will be recovered back and compared to the initial one, thus pushing the model to learn the input image.
 
-    $loss_{cycle} = \frac{||X_{back} - X||_{L1} + ||Y_back - Y||_{L1}}{2}$
+    $loss_{cycle} = \frac{ ||X_{back} - X||_{L1} + ||Y_back - Y||_{L1}  }{2}$
 
 - In the project, I basically reproduce the model in paper. After 100 epoches, I got a nice photo-to-style transfer, while the other is not so satisfactory. 
