@@ -134,4 +134,18 @@
     
     - However, the result is still not so good without a fine-tuned hyperparameters and a large computational resource. Anyway, at least I can recognize some architectural features of the building in the generated image, hhh.
     
-    - Besides, I do a reversed task for fun. It shows that the model truly grabs some features of the input image like horizontal lines, but it's still not good enough to generate a clear and sharp image. What's more interesting,  the generator seems to find a tricky to cheat the discriminator by generating a image with scattered squares after some epoches, which is, f**k.    
+    - Besides, I do a reversed task for fun. It shows that the model truly grabs some features of the input image like horizontal lines, but it's still not good enough to generate a clear and sharp image. What's more interesting,  the generator seems to find a tricky to cheat the discriminator by generating a image with scattered squares after some epoches, which is, f**k.  
+
+## **CycleGAN** 
+
+- Unpaired image-to-image generate, since many times the paired (converted) image pairs are hard to gain.
+
+- Here we construct a **cycle structure**, where X part to learn dataset X, Y part to learn dataset Y. And we construct two Generator Gxy and Gyx to do bidirectional transfer.
+
+    ![CycleGAN](images/CycleGAN.png)
+
+- In order to constrain the model with the input image, or say, prevent the model from generating irrelevant but true images, the paper introduces a **cycle loss**. The generated image will be recovered back and compared to the initial one, thus pushing the model to learn the input image.
+
+    $ loss_{cycle} = \frac{||X_{back} - X||_{L1} + ||Y_back - Y||_{L1}}{2}$
+
+- In the project, I basically reproduce the model in paper. After 100 epoches, I got a nice photo-to-style transfer, while the other is not so satisfactory. 
