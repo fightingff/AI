@@ -4,13 +4,14 @@ import torch
 import os
 
 class MyDataset(Dataset):
-    def __init__(self, path, num, transform = None):
+    def __init__(self, path, num, transform = None, type='.jpg'):
         self.num = num
         self.path = path
         self.transform = transform
+        self.type = type
 
     def __getitem__(self, index):
-        path = os.path.join(self.path, '%05d.jpg' % (index + 1))
+        path = os.path.join(self.path, f'%04d{self.type}' % (index + 1))
         img = Image.open(path).convert('RGB')
         if(self.transform is not None):
             img = self.transform(img)

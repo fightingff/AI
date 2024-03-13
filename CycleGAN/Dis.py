@@ -52,7 +52,7 @@ class Discriminator(nn.Module):
             nn.LeakyReLU(0.2),          # C512 16 * 16
 
             nn.Conv2d(512, 1, 4, 1, 1),
-            nn.ReLU(),
+            # nn.ReLU(),
             nn.AvgPool2d(14, 14, 0),      # 14 * 14
             nn.Flatten()
         )

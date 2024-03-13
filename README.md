@@ -142,10 +142,28 @@
 
 - Here we construct a **cycle structure**, where X part to learn dataset X, Y part to learn dataset Y. And we construct two Generator Gxy and Gyx to do bidirectional transfer.
 
-    ![CycleGAN](imgs/CycleGAN.png)
+    ![CycleGAN](Imgs/CycleGAN.png)
 
 - In order to constrain the model with the input image, or say, prevent the model from generating irrelevant but true images, the paper introduces a **cycle loss**. The generated image will be recovered back and compared to the initial one, thus pushing the model to learn the input image.
 
     $loss_{cycle} = \frac{ ||X_{back} - X||_{L1} + ||Y_back - Y||_{L1}  }{2}$
 
-- In the project, I basically reproduce the model in paper. After 100 epoches, I got a nice photo-to-style transfer, while the other is not so satisfactory. 
+- In the project, I basically reproduce the model in paper. 
+
+    The generator is mainly composed of **Residual Blocks** with **Instance Normalization**. 
+
+    The discriminator is a **PatchGAN**, which actually is a convolutional network instead of FC, dividing the image into N * N patches and considering each patch by an average pooling.
+ 
+- After 100 epoches, I got a nice photo-to-style transfer, while the other is not so satisfactory. 
+
+- Besides, for fun, I use the same model to do a Chinese character style transfer between Songti and WXZ Xingkai. But the result is somewhat bad, where the shape of font almost keeps unchanged after the transform and only some tiny points like the weight and depth have some changes. 
+    
+- When I remove the ReLU layer from the last patch judge of the discriminator, the performance is highly imporoved with this more strict juding. (Results after 100 epoches show below)
+    
+    ![style1](Imgs/style1.png)
+
+    ![style2](Imgs/style2.png)
+
+    - On one hand, the model truly learns the typical features of the both fonts and applies them on the generating. 
+    
+    - On the other hand, since the calligraphy is somewhat unordered, the transformation from orderly Songti to cool Xingkai seems nice, but trying to stardardize the strokes of the Xingkai is not an easy task truly. After all, sometimes it is hard for me to recognize the stroke either.

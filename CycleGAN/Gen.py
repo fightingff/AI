@@ -64,3 +64,4 @@ class Generator(nn.Module):
     
     def forward(self, X):
         return 0.5 * (self.model(X) + 1.0)
+        # return self.model(X)
