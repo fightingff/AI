@@ -142,7 +142,7 @@
 
 - Here we construct a **cycle structure**, where X part to learn dataset X, Y part to learn dataset Y. And we construct two Generator Gxy and Gyx to do bidirectional transfer.
 
-    ![CycleGAN](Imgs/CycleGAN.png)
+    ![CycleGAN](https://github.com/fightingff/AI/tree/main/Imgs/CycleGAN.png)
 
 - In order to constrain the model with the input image, or say, prevent the model from generating irrelevant but true images, the paper introduces a **cycle loss**. The generated image will be recovered back and compared to the initial one, thus pushing the model to learn the input image.
 
@@ -160,9 +160,9 @@
     
 - When I remove the ReLU layer from the last patch judge of the discriminator, the performance is highly imporoved with this more strict juding. (Results after 100 epoches show below)
     
-    ![style1](Imgs/style1.png)
+    ![style1](https://github.com/fightingff/AI/tree/main/Imgs/style1.png)
 
-    ![style2](Imgs/style2.png)
+    ![style2](https://github.com/fightingff/AI/tree/main/Imgs/style2.png)
 
     - On one hand, the model truly learns the typical features of the both fonts and applies them on the generating. 
     
